@@ -17,7 +17,7 @@ export interface QuestionOption {
   /** Текст варианта ответа */
   text: string;
   /** Является ли ответ правильным */
-  correct: boolean;
+  correct?: boolean;
   /** Количество баллов за выбор этого варианта */
   rating: number;
 }

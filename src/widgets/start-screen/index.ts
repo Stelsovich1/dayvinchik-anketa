@@ -1,1 +1,1 @@
-export { StartScreen } from './ui/StartScreen';
+export { StartScreen } from "./ui/StartScreen";

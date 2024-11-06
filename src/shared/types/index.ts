@@ -3,7 +3,13 @@
  */
 
 /** Возможные состояния игры */
-export type GameState = 'start' | 'quiz' | 'contact' | 'success' | 'failure' | 'rating';
+export type GameState =
+  | "start"
+  | "quiz"
+  | "contact"
+  | "success"
+  | "failure"
+  | "rating";
 
 /** Ответ пользователя на вопрос */
 export interface UserAnswer {

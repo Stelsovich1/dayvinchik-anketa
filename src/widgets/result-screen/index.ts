@@ -1,1 +1,1 @@
-export { ResultScreen } from './ui/ResultScreen';
+export { ResultScreen } from "./ui/ResultScreen";

@@ -1,1 +1,1 @@
-export { FailureScreen } from './ui/FailureScreen';
+export { FailureScreen } from "./ui/FailureScreen";
