@@ -26,9 +26,10 @@ export const QuizFeature: React.FC = () => {
     setCurrentQuestion(0);
     setTotalRating(0);
     setUserAnswers([]);
-    setShuffledQuestions(
+    /*    setShuffledQuestions(
       [...questions].sort(() => Math.random() - 0.5).slice(0, 10),
-    );
+    );*/
+    setShuffledQuestions([...questions]);
     setGameState("quiz");
   };
 

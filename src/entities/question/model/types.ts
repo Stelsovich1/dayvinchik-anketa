@@ -20,4 +20,6 @@ export interface QuestionOption {
   correct?: boolean;
   /** Количество баллов за выбор этого варианта */
   rating: number;
+  /** Если музыкальный вопрос то URL музыки */
+  musicSrc?: string;
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Heart } from "lucide-react";
+import iam from "../assets/iam.jpg";
 
 interface StartScreenProps {
   onStart: () => void;
@@ -12,7 +13,7 @@ export const StartScreen: React.FC<StartScreenProps> = ({ onStart }) => {
     <div className="max-w-2xl mx-auto text-center">
       <div className="mb-8">
         <img
-          src=""
+          src={iam}
           alt="Здесь моё фото"
           className="w-48 h-48 object-cover rounded-full mx-auto shadow-xl border-4 border-white"
         />
@@ -25,10 +26,13 @@ export const StartScreen: React.FC<StartScreenProps> = ({ onStart }) => {
         <p className="text-gray-600 mb-6">
           Мне 32 года, я творческая личность, обожаю путешествия и новые
           впечатления. Я лёгок на подъем и прост в обращении. Ищу девушку, с
-          которой можно разделить яркие моменты жизни. Верю в искренность,
-          честность и глубокие чувства. Если ты разделяешь эти ценности - давай
-          познакомимся! В этом квизе будет немного вопросов, а в конце
-          мем-оценка по результатам твоих ответов :-)
+          которой можно разделить яркие моменты жизни.
+          <br />
+          Верю в искренность, честность и глубокие чувства.
+          <br />
+          Если ты разделяешь эти ценности - давай познакомимся!
+          <br />В этом квизе будет немного вопросов, а в конце мем-оценка по
+          результатам твоих ответов :-)
         </p>
       </div>
 

@@ -50,13 +50,16 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
             <button
               key={index}
               onClick={() => setSelectedOption(index)}
-              className={`w-full p-4 text-left rounded-lg transition-all ${
+              className={`w-full p-4 flex-col text-left rounded-lg transition-all ${
                 selectedOption === index
                   ? "bg-pink-100 border-2 border-pink-500"
                   : "bg-gray-50 border-2 border-transparent hover:bg-pink-50"
               }`}
             >
               {option.text}
+              {option.musicSrc && (
+                <audio src={option.musicSrc} controls className="mt-2 w-full" />
+              )}
             </button>
           ))}
         </div>
