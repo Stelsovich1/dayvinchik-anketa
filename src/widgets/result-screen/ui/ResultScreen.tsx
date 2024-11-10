@@ -1,7 +1,8 @@
-import React from "react";
-import { Heart, Stars } from "lucide-react";
+import React, { useEffect } from "react";
+import { ExternalLink, Heart, Stars } from "lucide-react";
 import { ratingResults } from "../../../entities/rating-result";
 import type { RatingResult } from "../../../entities/rating-result";
+import { storage } from "../../../shared/api/localStorageApi.ts";
 
 interface ResultScreenProps {
   rating: number;
@@ -15,6 +16,12 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({
   rating,
   showRatingResults,
 }) => {
+  useEffect(() => {
+    if (!showRatingResults) {
+      storage.clear();
+    }
+  }, [showRatingResults]);
+
   const getResult = (rating: number): RatingResult => {
     return (
       ratingResults.find(
@@ -78,6 +85,16 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({
         <p className="text-gray-600 text-lg leading-relaxed">
           {result.description}
         </p>
+
+        <a
+          href="https://t.me/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-pink-500 hover:text-pink-600 transition-colors font-medium"
+        >
+          Хочешь мне написать что думаешь об этом - вот моя ссылка на телеграм
+          <ExternalLink className="w-4 h-4" />
+        </a>
       </div>
     </div>
   );

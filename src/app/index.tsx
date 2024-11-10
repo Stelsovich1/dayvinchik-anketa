@@ -1,5 +1,5 @@
 import { Toaster } from "react-hot-toast";
-import { QuizProvider } from "./providers/quiz-provider";
+import { QuizProvider } from "./providers/quiz-provider/quizProvider.tsx";
 import { Layout } from "../shared/ui/layout";
 import { QuizFeature } from "../features/quiz";
 

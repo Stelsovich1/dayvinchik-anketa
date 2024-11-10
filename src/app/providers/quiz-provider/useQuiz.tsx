@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { QuizContext } from "./index.tsx";
+import { QuizContext } from "./quizProvider.tsx";
 
 /**
  * Контекст QuizProvider

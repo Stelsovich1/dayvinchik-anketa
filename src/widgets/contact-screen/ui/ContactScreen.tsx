@@ -4,19 +4,23 @@ import type { QuizData } from "../../../shared/types";
 
 interface ContactScreenProps {
   onSubmit: (data: QuizData) => Promise<void>;
+  initialData?: Partial<QuizData>;
 }
 
 /**
  * Экран контактной формы
  */
-export const ContactScreen: React.FC<ContactScreenProps> = ({ onSubmit }) => {
+export const ContactScreen: React.FC<ContactScreenProps> = ({
+  onSubmit,
+  initialData = {},
+}) => {
   const [formData, setFormData] = useState<QuizData>({
-    name: "",
-    telegram: "",
-    about: "",
-    photo: null,
-    rating: 0,
-    answers: [],
+    name: initialData.name || "",
+    telegram: initialData.telegram || "",
+    about: initialData.about || "",
+    photo: initialData.photo || null,
+    rating: initialData.rating || 0,
+    answers: initialData.answers || [],
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);

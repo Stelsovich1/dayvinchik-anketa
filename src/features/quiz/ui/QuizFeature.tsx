@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { StartScreen } from "../../../widgets/start-screen";
 import { QuestionScreen } from "../../../widgets/question-screen";
@@ -9,6 +9,7 @@ import { questions } from "../../../entities/question";
 import { sendQuizResults } from "../../../shared/api";
 import type { QuizData, UserAnswer } from "../../../shared/types";
 import { useQuiz } from "../../../app/providers/quiz-provider/useQuiz.tsx";
+import { storage } from "../../../shared/api/localStorageApi.ts";
 
 /**
  * Основной компонент квиза
@@ -21,6 +22,43 @@ export const QuizFeature: React.FC = () => {
     [],
   );
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
+  const [formData, setFormData] = useState<Partial<QuizData>>({});
+
+  // Загрузка сохраненного состояния при монтировании
+  useEffect(() => {
+    const savedState = storage.load();
+    if (savedState) {
+      setGameState(savedState.gameState);
+      setCurrentQuestion(savedState.currentQuestion);
+      setTotalRating(savedState.totalRating);
+      setUserAnswers(savedState.userAnswers);
+      if (savedState.formData) {
+        setFormData(savedState.formData);
+      }
+
+      // Восстанавливаем перемешанные вопросы или создаем новые
+      if (savedState.gameState === "quiz") {
+        /*        setShuffledQuestions(
+          [...questions].sort(() => Math.random() - 0.5).slice(0, 10),
+        );*/
+        setShuffledQuestions([...questions]);
+      }
+    }
+  }, [setGameState, setTotalRating]);
+
+  // Сохранение состояния при изменениях
+  useEffect(() => {
+    if (gameState === "start") {
+      return;
+    }
+    storage.save({
+      gameState,
+      currentQuestion,
+      totalRating,
+      userAnswers,
+      formData,
+    });
+  }, [gameState, currentQuestion, totalRating, userAnswers, formData]);
 
   const initializeQuiz = () => {
     setCurrentQuestion(0);
@@ -68,6 +106,23 @@ export const QuizFeature: React.FC = () => {
     }
   };
 
+  const handleBack = () => {
+    if (currentQuestion > 0) {
+      // Удаляем последний ответ
+      const newAnswers = [...userAnswers];
+      const removedAnswer = newAnswers.pop();
+      setUserAnswers(newAnswers);
+
+      // Вычитаем рейтинг предыдущего ответа
+      if (removedAnswer) {
+        setTotalRating((prev) => prev - removedAnswer.rating);
+      }
+
+      // Возвращаемся к предыдущему вопросу
+      setCurrentQuestion((prev) => prev - 1);
+    }
+  };
+
   const handleSubmitContact = async (
     formData: Omit<QuizData, "rating" | "answers">,
   ) => {
@@ -95,6 +150,7 @@ export const QuizFeature: React.FC = () => {
   };
 
   const handleRetry = () => {
+    storage.clear();
     initializeQuiz();
   };
 
@@ -108,11 +164,13 @@ export const QuizFeature: React.FC = () => {
           onAnswer={handleAnswer}
           currentQuestion={currentQuestion}
           totalQuestions={shuffledQuestions.length}
+          onBack={handleBack}
+          canGoBack={currentQuestion > 0}
         />
       )}
 
       {gameState === "contact" && (
-        <ContactScreen onSubmit={handleSubmitContact} />
+        <ContactScreen initialData={formData} onSubmit={handleSubmitContact} />
       )}
 
       {(gameState === "success" || gameState === "rating") && (

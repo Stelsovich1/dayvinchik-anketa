@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Question } from "../../../entities/question";
 
 interface QuestionScreenProps {
@@ -7,6 +7,8 @@ interface QuestionScreenProps {
   onAnswer: (isCorrect: boolean, rating: number, answerText: string) => void;
   currentQuestion: number;
   totalQuestions: number;
+  canGoBack: boolean;
+  onBack: () => void;
 }
 
 /**
@@ -17,13 +19,41 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
   onAnswer,
   currentQuestion,
   totalQuestions,
+  canGoBack,
+  onBack,
 }) => {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const audioRefs = React.useRef<HTMLAudioElement[]>([]);
+
+  // Сброс выбранного варианта при смене вопроса
+  useEffect(() => {
+    setSelectedOption(null);
+    // Убираем фокус с активного элемента
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+  }, [question]);
 
   const handleSubmit = () => {
     if (selectedOption === null) return;
     const option = question.options[selectedOption];
     onAnswer(option.correct ?? true, option.rating, option.text);
+  };
+
+  const handleAudioPlay = (index: number) => {
+    const audio = audioRefs.current[index];
+    if (!audio) return;
+
+    // Останавливаем все аудио элементы, кроме выбранного
+    audioRefs.current.forEach((ref, i) => {
+      if (ref && i !== index) {
+        ref.pause();
+        ref.currentTime = 0;
+      }
+    });
+
+    // Воспроизводим выбранный аудио элемент
+    void audio.play();
   };
 
   const progress = ((currentQuestion + 1) / totalQuestions) * 100;
@@ -58,24 +88,46 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
             >
               {option.text}
               {option.musicSrc && (
-                <audio src={option.musicSrc} controls className="mt-2 w-full" />
+                <audio
+                  ref={(element) => {
+                    if (!element) return;
+                    audioRefs.current[index] = element;
+                  }}
+                  preload="none"
+                  src={option.musicSrc}
+                  controls
+                  className="mt-2 w-full"
+                  onPlay={() => handleAudioPlay(index)}
+                />
               )}
             </button>
           ))}
         </div>
 
-        <button
-          onClick={handleSubmit}
-          disabled={selectedOption === null}
-          className={`w-full py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-all ${
-            selectedOption === null
-              ? "bg-gray-300 cursor-not-allowed"
-              : "bg-gradient-to-r from-pink-500 to-red-500 text-white hover:from-pink-600 hover:to-red-600"
-          }`}
-        >
-          Далее
-          <ArrowRight className="w-5 h-5" />
-        </button>
+        <div className="flex items-center gap-4">
+          {canGoBack && (
+            <button
+              onClick={onBack}
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              title="Вернуться к предыдущему вопросу"
+            >
+              <ArrowLeft className="w-5 h-5 text-gray-700" />
+            </button>
+          )}
+
+          <button
+            onClick={handleSubmit}
+            disabled={selectedOption === null}
+            className={`flex-1 py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-all ${
+              selectedOption === null
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-gradient-to-r from-pink-500 to-red-500 text-white hover:from-pink-600 hover:to-red-600"
+            }`}
+          >
+            Далее
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </div>
       </div>
 
       {/* Прогресс бар - только на десктопе */}
