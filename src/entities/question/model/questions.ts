@@ -9,6 +9,11 @@ import beliver from "../assets/music/imagine-dragons-believer.mp3";
 import streli from "../assets/music/streli.mp3";
 import podoshva from "../assets/music/podoshva.mp3";
 import krasivo from "../assets/music/krasivo.mp3";
+
+import petr3 from "../assets/memes/petr3_.jpg";
+import pitbul from "../assets/memes/pitbull.jpg";
+import blatded from "../assets/memes/blatded.mp4";
+
 /**
  * База вопросов для квиза
  */
@@ -24,13 +29,13 @@ export const questions: Question[] = [
       },
       {
         text: "Доброта порок, нужно быть реалистом",
-        rating: 3,
+        rating: 1,
       },
       {
         text: "В большей степени - да",
         rating: 10,
       },
-      { text: "В этом мире нет добрых людей", rating: 1 },
+      { text: "В этом мире нет добрых людей", rating: 3 },
     ],
   },
   {
@@ -58,9 +63,8 @@ export const questions: Question[] = [
     ],
   },
   {
-    text: "Оцени мем, где 1 не смешно и 4 очень смешно",
-    image:
-      "https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?w=800&auto=format&fit=crop&q=80",
+    text: "Оцени мем, где 1 не смешно и 4 смешно",
+    image: petr3,
     options: [
       {
         text: "4",
@@ -81,25 +85,45 @@ export const questions: Question[] = [
     ],
   },
   {
-    text: "Как лучше всего провести свободное время?",
+    text: "Как ты относишься к искусству и культуре?",
+    image:
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&auto=format&fit=crop&q=80",
+    options: [
+      { text: "Я ценю искусство, но не уделяю ему много времени", rating: 7 },
+      {
+        text: "Я люблю искусство и культуру, посещаю музеи и театры",
+        rating: 10,
+      },
+      {
+        text: "Я не особо интересуюсь искусством, предпочитаю другие виды развлечений",
+        rating: 4,
+      },
+      {
+        text: "Я считаю, что искусство — это скучно и не имеет значения",
+        rating: 2,
+      },
+    ],
+  },
+  {
+    text: "Представим ролевую игру с переодеваниями - какой костюм из этих наиболее подходящий?",
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=80",
     options: [
       {
-        text: "Куда-нибудь сходить на мероприятие, проводить время в компании",
-        rating: 10,
+        text: "Горничная с длинным пипидастром",
+        rating: 8,
       },
       {
-        text: "Сходить в кафе / SPA / уделить это время себе на пользу",
+        text: "Костюм банана с большими глазами",
         rating: 7,
       },
       {
-        text: "У меня вообще нет свободного времени - сплошная работа и дела",
-        rating: 1,
+        text: "Кошка - острые ушки, хвост и всё такое страстное черное",
+        rating: 9,
       },
       {
-        text: "Я люблю проводить время дома, смотреть фильмы / читать книги",
-        rating: 8,
+        text: "Ведьма - шляпа, метла, книга с заклинаниями в картинках",
+        rating: 6,
       },
     ],
   },
@@ -157,46 +181,46 @@ export const questions: Question[] = [
       },
     ],
   },
+
   {
-    text: "Как ты относишься к искусству и культуре?",
-    image:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&auto=format&fit=crop&q=80",
+    text: "Оцени мем, где 1 не смешно и 4 смешно",
+    image: pitbul,
     options: [
-      { text: "Я ценю искусство, но не уделяю ему много времени", rating: 7 },
       {
-        text: "Я люблю искусство и культуру, посещаю музеи и театры",
+        text: "4",
+        rating: 1,
+      },
+      {
+        text: "3",
+        rating: 3,
+      },
+      {
+        text: "2",
         rating: 10,
       },
       {
-        text: "Я не особо интересуюсь искусством, предпочитаю другие виды развлечений",
-        rating: 4,
-      },
-      {
-        text: "Я считаю, что искусство — это скучно и не имеет значения",
-        rating: 2,
+        text: "1",
+        rating: 9,
       },
     ],
   },
   {
-    text: "Оцени мем, где 1 не смешно и 4 очень смешно",
+    text: "Как относишься к спорту и здоровому образу жизни?",
     image:
-      "https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&auto=format&fit=crop&q=80",
     options: [
       {
-        text: "4",
+        text: "Я регулярно занимаюсь спортом и стараюсь придерживаться здорового образа жизни",
         rating: 10,
       },
       {
-        text: "3",
+        text: "Я люблю спорт, но не всегда нахожу время для занятий",
         rating: 7,
       },
+      { text: "Для меня спорт не очень важен", rating: 2 },
       {
-        text: "2",
-        rating: 4,
-      },
-      {
-        text: "1",
-        rating: 2,
+        text: "Я не особо интересуюсь спортом, предпочитаю другие виды активности",
+        rating: 6,
       },
     ],
   },
@@ -211,7 +235,7 @@ export const questions: Question[] = [
       },
       {
         text: "Со своим человеком - да, в остальном не считаю так",
-        rating: 10,
+        rating: 9,
       },
       {
         text: "Могу найти общий язык с любым человеком",
@@ -261,7 +285,7 @@ export const questions: Question[] = [
     options: [
       {
         text: "Хороший отель с комфортом и высоким сервисом",
-        rating: 5,
+        rating: 3,
       },
       {
         text: "Отель ? может лучше кемпинг с палатками ?",
@@ -272,15 +296,15 @@ export const questions: Question[] = [
         rating: 10,
       },
       {
-        text: "Выбор за тобой, мне без разницы",
-        rating: 1,
+        text: "Выбор за тобой, мне без разницы какой отель",
+        rating: 4,
       },
     ],
   },
   {
     text: "Оцени мем, где 1 не смешно и 4 очень смешно",
-    image:
-      "https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?w=800&auto=format&fit=crop&q=80",
+    isVideo: true,
+    image: blatded,
     options: [
       {
         text: "4",
@@ -301,26 +325,6 @@ export const questions: Question[] = [
     ],
   },
   {
-    text: "Как относишься к спорту и здоровому образу жизни?",
-    image:
-      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&auto=format&fit=crop&q=80",
-    options: [
-      {
-        text: "Я регулярно занимаюсь спортом и стараюсь придерживаться здорового образа жизни",
-        rating: 10,
-      },
-      {
-        text: "Я люблю спорт, но не всегда нахожу время для занятий",
-        rating: 7,
-      },
-      { text: "Для меня спорт не очень важен", rating: 2 },
-      {
-        text: "Я не особо интересуюсь спортом, предпочитаю другие виды активности",
-        rating: 6,
-      },
-    ],
-  },
-  {
     text: "Романтика в отношениях - это важно?",
     image:
       "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=800&auto=format&fit=crop&q=80",
@@ -334,6 +338,7 @@ export const questions: Question[] = [
         text: "Я не особо увлекаюсь романтикой, предпочитаю другие аспекты отношений",
         rating: 4,
       },
+      { text: "50 / 50", rating: 7 },
     ],
   },
   {
@@ -350,7 +355,7 @@ export const questions: Question[] = [
         rating: 10,
       },
       {
-        text: "Нет, в этом нет для меня необходимости",
+        text: "Нет",
         rating: 1,
       },
     ],

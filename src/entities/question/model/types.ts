@@ -8,6 +8,7 @@ export interface Question {
   text: string;
   /** URL изображения для вопроса (опционально) */
   image?: string;
+  isVideo?: boolean;
   /** Варианты ответов */
   options: QuestionOption[];
 }

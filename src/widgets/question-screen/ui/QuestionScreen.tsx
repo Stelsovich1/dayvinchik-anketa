@@ -63,11 +63,20 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
       <div className="bg-white rounded-lg shadow-xl p-8 transform transition-all mb-4">
         {question.image && (
           <div className="mb-6">
-            <img
-              src={question.image}
-              alt="Question"
-              className="w-full h-64 object-cover rounded-lg shadow-md"
-            />
+            {question.isVideo ? (
+              <video
+                src={question.image}
+                controls
+                preload={"none"}
+                className="w-full h-64 object-contain rounded-lg shadow-md"
+              />
+            ) : (
+              <img
+                src={question.image}
+                alt="Question"
+                className="w-full h-64 object-contain rounded-lg shadow-md"
+              />
+            )}
           </div>
         )}
 
