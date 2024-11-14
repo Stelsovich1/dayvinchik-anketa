@@ -68,13 +68,13 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
                 src={question.image}
                 controls
                 preload={"none"}
-                className="w-full h-64 object-contain rounded-lg shadow-md"
+                className="w-full h-full object-contain rounded-lg"
               />
             ) : (
               <img
                 src={question.image}
                 alt="Question"
-                className="w-full h-64 object-contain rounded-lg shadow-md"
+                className="w-full h-full object-contain rounded-lg"
               />
             )}
           </div>

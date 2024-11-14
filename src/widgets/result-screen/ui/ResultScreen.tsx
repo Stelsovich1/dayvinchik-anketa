@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { ExternalLink, Heart, Stars } from "lucide-react";
+import { ExternalLink, Heart } from "lucide-react";
 import { ratingResults } from "../../../entities/rating-result";
 import type { RatingResult } from "../../../entities/rating-result";
 import { storage } from "../../../shared/api/localStorageApi.ts";
@@ -68,10 +68,10 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({
             className="w-full h-96 object-cover rounded-lg shadow-xl"
           />
           {/* Отображает результат в виде звёзд-рейтинга набранных за заполнение анкеты */}
-          <div className="absolute top-4 right-4 bg-white/90 rounded-full px-4 py-2 flex items-center gap-2">
+          {/*          <div className="absolute top-4 right-4 bg-white/90 rounded-full px-4 py-2 flex items-center gap-2">
             <Stars className="w-5 h-5 text-yellow-500" />
             <span className="font-bold">{rating} / 100</span>
-          </div>
+          </div>*/}
         </div>
       </div>
 
@@ -82,17 +82,17 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({
           <Heart className="w-6 h-6 text-pink-500" />
         </h2>
 
-        <p className="text-gray-600 text-lg leading-relaxed">
+        <p className="text-gray-600 text-lg leading-relaxed mb-10">
           {result.description}
         </p>
 
         <a
-          href="https://t.me/yourusername"
+          href="https://t.me/stelsovich1"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-pink-500 hover:text-pink-600 transition-colors font-medium"
         >
-          Хочешь мне написать что думаешь об этом - вот моя ссылка на телеграм
+          Хочешь сама мне написать что думаешь об этом? - нажми на ссылку
           <ExternalLink className="w-4 h-4" />
         </a>
       </div>

@@ -34,7 +34,7 @@ export const ratingResults: RatingResult[] = [
       "https://img.huffingtonpost.com/asset/63a38a0e2300003400ae2740.jpeg?ops=1024_768",
     title: "Сон на яву",
     description:
-      "Ты как сон, в котором так уютно и безмятежно! Представляешь, мы вместе где-то на закате, кофе в руках и обсуждаем всё, от мелочей до космоса...",
+      "Ты как сон, в котором так уютно и безмятежно.. Представляешь, мы вместе где-то на закате, кофе в руках и обсуждаем всё, от мелочей до космоса...",
   },
   {
     range: [100, 125],
@@ -50,6 +50,6 @@ export const ratingResults: RatingResult[] = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/640px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg",
     title: "Апофеоз мечтаний и любви",
     description:
-      "Ты — как редкое издание книги, от которой невозможно оторваться. Каждая страница открывает что-то новое и загадочное. С тобой легко поверить в чудеса.",
+      "Ты словно картина великого мастера — каждый штрих добавляет шарма, и невозможно отвести взгляд. С тобой хочется открывать все оттенки жизни, находя в каждом дне вдохновение.",
   },
 ];

@@ -21,7 +21,7 @@ export const questions: Question[] = [
   {
     text: "Считаешь ли ты себя доброй?",
     image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80",
+      "https://unsplash.com/photos/VvM8h5TnWUg/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzMxNjEwMTc2fA&force=true&w=640",
     options: [
       {
         text: "Не думаю, что назвала бы себя 'доброй'",
@@ -41,7 +41,7 @@ export const questions: Question[] = [
   {
     text: "Как ты определяешь того самого?",
     image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80",
+      "https://avatars.dzeninfra.ru/get-zen_brief/6378390/pub_6322f30430ace83afca00279_6322f6c744d1a21f9916bccb/scale_1200",
     options: [
       {
         text: "Нужно плотно пообщаться и узнать хорошо друг друга, чтобы узнать подходит ли мне 'тот самый'",
@@ -87,7 +87,7 @@ export const questions: Question[] = [
   {
     text: "Как ты относишься к искусству и культуре?",
     image:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&auto=format&fit=crop&q=80",
+      "https://avatars.dzeninfra.ru/get-zen_doc/2907131/pub_602ff6f3084cc3452447c518_602ff821a332dd7373bb5f22/scale_1200",
     options: [
       { text: "Я ценю искусство, но не уделяю ему много времени", rating: 7 },
       {
@@ -106,8 +106,7 @@ export const questions: Question[] = [
   },
   {
     text: "Представим ролевую игру с переодеваниями - какой костюм из этих наиболее подходящий?",
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=80",
+    image: "https://a.d-cd.net/RAAAAgLhueA-960.jpg",
     options: [
       {
         text: "Горничная с длинным пипидастром",
@@ -161,7 +160,7 @@ export const questions: Question[] = [
   {
     text: "Как относишься к саморазвитию?",
     image:
-      "https://images.unsplash.com/photo-1580618864182-a5bbfe84c824?w=800&auto=format&fit=crop&q=80",
+      "https://static-forum.gipsyteam.ru/monthly_02_2022/post-113225-1645617149e481.jpg",
     options: [
       {
         text: "Время от времени по работе приходится",
@@ -227,7 +226,7 @@ export const questions: Question[] = [
   {
     text: "Считаешь ли ты себя общительным человеком?",
     image:
-      "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&auto=format&fit=crop&q=80",
+      "https://unsplash.com/photos/71CjSSB83Wo/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8Y29tbXVuaWNhdGlvbnxlbnwwfHx8fDE3MzE2MDMwOTl8MA&force=true&w=640",
     options: [
       {
         text: "Я не особо общительный человек",
@@ -281,7 +280,7 @@ export const questions: Question[] = [
   {
     text: "Представь, выбираешь отель в путешествие - чему будешь отдавать предпочтение?",
     image:
-      "https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=800&auto=format&fit=crop&q=80",
+      "https://unsplash.com/photos/_g1WdcKcV3w/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzMxNjExMzk5fA&force=true&w=640",
     options: [
       {
         text: "Хороший отель с комфортом и высоким сервисом",
@@ -327,7 +326,7 @@ export const questions: Question[] = [
   {
     text: "Романтика в отношениях - это важно?",
     image:
-      "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=800&auto=format&fit=crop&q=80",
+      "https://sun9-32.userapi.com/impf/c540108/v540108344/21765/PlYvcsFVxVE.jpg?size=600x400&quality=96&sign=0299489e3be81e0bd2087e5826433716&type=album",
     options: [
       {
         text: "Мне нравится романтика в отношениях, хочу в своих отношениях романтики",
