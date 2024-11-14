@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -t true"
   },
   "dependencies": {
     "@emailjs/browser": "^4.1.0",
