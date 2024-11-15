@@ -57,7 +57,7 @@ export const questions: Question[] = [
       },
       {
         text: "Никого не ищу",
-        rating: -10,
+        rating: -20,
       },
       { text: "Есть четкие критерии и я точно знаю кого ищу", rating: 7 },
     ],
@@ -68,11 +68,11 @@ export const questions: Question[] = [
     options: [
       {
         text: "4",
-        rating: 10,
+        rating: 7,
       },
       {
         text: "3",
-        rating: 7,
+        rating: 10,
       },
       {
         text: "2",
@@ -191,7 +191,7 @@ export const questions: Question[] = [
       },
       {
         text: "3",
-        rating: 3,
+        rating: 5,
       },
       {
         text: "2",
@@ -355,7 +355,7 @@ export const questions: Question[] = [
       },
       {
         text: "Нет",
-        rating: 1,
+        rating: -10,
       },
     ],
   },

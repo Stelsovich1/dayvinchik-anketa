@@ -5,7 +5,7 @@ import type { RatingResult } from "./types";
  */
 export const ratingResults: RatingResult[] = [
   {
-    range: [-3, 22],
+    range: [-100, 22],
     image:
       "https://i.pinimg.com/originals/be/fb/e8/befbe87cf830a4f1d4f1e5baf962dd44.jpg",
     title: "Абсолютное несовпадение",
@@ -13,7 +13,7 @@ export const ratingResults: RatingResult[] = [
       "Кажется, вы - будто специально зашли сюда меня потроллить... Наша совместимость сродни встрече кошки и огурца",
   },
   {
-    range: [23, 48],
+    range: [23, 49],
     image:
       "https://i.pinimg.com/originals/6d/11/47/6d1147b9a40fafd7ebece9e9b9ef80dd.jpg",
     title: "Слабая искра",
@@ -21,7 +21,7 @@ export const ratingResults: RatingResult[] = [
       "Ну что ж, маленький огонек между нами пробежал! Наверное, на первом свидании мы бы вместе перебирали скучные темы, но кто знает — иногда искры становятся кострами!",
   },
   {
-    range: [49, 74],
+    range: [50, 74],
     image:
       "https://static1.thegamerimages.com/wordpress/wp-content/uploads/2017/08/tomb-raider-2-cheat-and-standing.jpg",
     title: "Расхитительница сердец",
@@ -32,7 +32,7 @@ export const ratingResults: RatingResult[] = [
     range: [75, 99],
     image:
       "https://img.huffingtonpost.com/asset/63a38a0e2300003400ae2740.jpeg?ops=1024_768",
-    title: "Сон на яву",
+    title: "Сон наяву",
     description:
       "Ты как сон, в котором так уютно и безмятежно.. Представляешь, мы вместе где-то на закате, кофе в руках и обсуждаем всё, от мелочей до космоса...",
   },

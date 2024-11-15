@@ -107,6 +107,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
                   controls
                   className="mt-2 w-full"
                   onPlay={() => handleAudioPlay(index)}
+                  style={{ width: "100%" }}
                 />
               )}
             </button>
